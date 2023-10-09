@@ -55,17 +55,17 @@ function Menu(props){
                 </ul>
                 <div className="user">
                     <label>
-                        <NavLink to='/login' className={activePage === '/login' ? theme?'lightbtnactive button':'btnactive  button' : theme?'button lightbtn':'button'}>
+                        <NavLink to='/login' className={activePage === '/login' ? theme?'lightbtnactive':'btnactive  button' : theme?'lightbtn':'button'}>
                             <FontAwesomeIcon icon={faArrowRightToBracket}/> Login
                         </NavLink>
                     </label>
                     <label>
-                        <NavLink to='/register' className={activePage === '/register' ? theme?'lightbtnactive button':'btnactive  button' : theme?'button lightbtn':'button'}>
+                        <NavLink to='/register' className={activePage === '/register' ? theme?'lightbtnactive':'btnactive  button' : theme?'lightbtn':'button'}>
                             <FontAwesomeIcon icon={faUserPlus}/> Register
                         </NavLink>
                     </label>
                     <label>
-                        <NavLink to='/cart' className={activePage === '/cart' ? theme?'lightbtnactive button':'btnactive  button' : theme?'button lightbtn':'button'}>
+                        <NavLink to='/cart' className={activePage === '/cart' ? theme?'lightbtnactive':'btnactive  button' : theme?'lightbtn':'button'}>
                             <FontAwesomeIcon icon={faCartShopping}/> Cart
                         </NavLink>
                     </label>
