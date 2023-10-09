@@ -15,7 +15,7 @@ function App() {
   const [theme,settheme] = useState(false);
 
   return (
-    <div className="App">
+    <div className={theme?"App darkcolor":"App"}>
       <HashRouter>
         <Routes>
           <Route path='/' element={<Menu theme={theme} settheme={settheme}/>}>
