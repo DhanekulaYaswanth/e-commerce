@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter basename="/e-commerce">
+      <BrowserRouter>
         <Routes>
           <Route path='/' element={<Menu theme={theme} settheme={settheme}/>}>
             <Route index path='/' element={<Home theme={theme} settheme={settheme}/>}/>
