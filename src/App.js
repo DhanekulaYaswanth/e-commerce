@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter,Route,Routes } from 'react-router-dom';
+import { HashRouter,Route,Routes } from 'react-router-dom';
 import Menu from './Components/Menu/Menu';
 import Products from './Components/Products/Products.js';
 import Home from './Components/Home/Home';
@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter basename="/e-commerce">
+      <HashRouter>
         <Routes>
           <Route path='/' element={<Menu theme={theme} settheme={settheme}/>}>
             <Route path='/' element={<Home theme={theme} settheme={settheme}/>}/>
@@ -28,7 +28,7 @@ function App() {
             <Route path='/cart' element={<Cart theme={theme} settheme={settheme}/>}/>
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
