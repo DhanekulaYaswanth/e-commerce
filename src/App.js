@@ -19,7 +19,7 @@ function App() {
       <BrowserRouter basename="/e-commerce">
         <Routes>
           <Route path='/' element={<Menu theme={theme} settheme={settheme}/>}>
-            <Route index path='/' element={<Home theme={theme} settheme={settheme}/>}/>
+            <Route path='/' element={<Home theme={theme} settheme={settheme}/>}/>
             <Route path='/Products' element={<Products theme={theme} settheme={settheme}/>}/>            
             <Route path='/about' element={<About theme={theme} settheme={settheme}/>}/>
             <Route path='/contact' element={<Contact theme={theme} settheme={settheme}/>}/>
