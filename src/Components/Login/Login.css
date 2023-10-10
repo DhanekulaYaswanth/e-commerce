@@ -42,10 +42,10 @@
 .logindetails>[type='email'],.logindetails>[type='password']{
     width: 600px;
     height: 50px;
-    border-radius: 7px;
     padding-left: 10px;
     font-size: 20px;
-    border: 1px solid rgb(68, 67, 67);
+    border: none;
+    border-bottom: 1px solid rgb(68, 67, 67);
     background-color: transparent;
 }
 
@@ -133,7 +133,7 @@
     background-color: rgb(79, 19, 175);
     color: white;
     font-size: 23px;
-    width: 100%;
+    width: 80%;
     height: 50px;
     border-radius: 10px;
     cursor: pointer;

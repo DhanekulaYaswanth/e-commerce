@@ -25,7 +25,7 @@ function Menu(props){
     return(
         <div className={theme?"MenuContainer dark":"MenuContainer"}>
             <input type="checkbox" id="hamburger"/>
-            <div className="Menu">
+            <div className={theme?"Menu ":"Menu darkMenu"}>
                 <div className="logo">
                     <div className="logotheme">
                         <Link to='/' className='logolink' style={{color:theme?'#fff':''}}><h1>E-Commerce</h1></Link>
