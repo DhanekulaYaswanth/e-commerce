@@ -1,18 +1,27 @@
 {
   "files": {
-    "main.css": "/e-commerce/static/css/main.068326f6.css",
-    "main.js": "/e-commerce/static/js/main.377c7b7a.js",
+    "main.css": "/e-commerce/static/css/main.f21e6cc6.css",
+    "main.js": "/e-commerce/static/js/main.89a2c88b.js",
     "static/media/products.jpg": "/e-commerce/static/media/products.1ea0221596f9e5f3d7d9.jpg",
+    "static/media/mobiles.jpg": "/e-commerce/static/media/mobiles.4d69a794123107bb37b3.jpg",
     "static/media/about.jpg": "/e-commerce/static/media/about.c1e265e122a26d58af4e.jpg",
     "static/media/customersatisfaction.png": "/e-commerce/static/media/customersatisfaction.6f41fd6617820943789b.png",
     "static/media/Company.jpeg": "/e-commerce/static/media/Company.c6f3ba8cfecf79b4dd1d.jpeg",
+    "static/media/laptops.jpg": "/e-commerce/static/media/laptops.58e6461ca56d9e353acb.jpg",
+    "static/media/mensClothing.jpg": "/e-commerce/static/media/mensClothing.49bc39fc2d1de5eadd10.jpg",
     "static/media/mission.jpg": "/e-commerce/static/media/mission.615be369873a6bce52ce.jpg",
+    "static/media/womenclothing.jpeg": "/e-commerce/static/media/womenclothing.f936b87faf4dd3e3eba8.jpeg",
+    "static/media/ComputerAccesories.avif": "/e-commerce/static/media/ComputerAccesories.5da5862826cae5ebfb8d.avif",
+    "static/media/circuitscomponents.jpg": "/e-commerce/static/media/circuitscomponents.9a826f23bbc073801703.jpg",
+    "static/media/kidswear.avif": "/e-commerce/static/media/kidswear.e8536e67fe7cc859c899.avif",
+    "static/media/homeElectronics.jpg": "/e-commerce/static/media/homeElectronics.ed808ebe42c289f83be0.jpg",
+    "static/media/electronics.avif": "/e-commerce/static/media/electronics.ca3cd2f2edf21457bfb7.avif",
     "index.html": "/e-commerce/index.html",
-    "main.068326f6.css.map": "/e-commerce/static/css/main.068326f6.css.map",
-    "main.377c7b7a.js.map": "/e-commerce/static/js/main.377c7b7a.js.map"
+    "main.f21e6cc6.css.map": "/e-commerce/static/css/main.f21e6cc6.css.map",
+    "main.89a2c88b.js.map": "/e-commerce/static/js/main.89a2c88b.js.map"
   },
   "entrypoints": [
-    "static/css/main.068326f6.css",
-    "static/js/main.377c7b7a.js"
+    "static/css/main.f21e6cc6.css",
+    "static/js/main.89a2c88b.js"
   ]
 }
