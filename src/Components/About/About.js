@@ -6,6 +6,18 @@ function About(props){
 
     const [query,setquery] = useState(null)
 
+    const images = [
+        {'image':require('./productimages/circuitscomponents.jpg'),'name':'Electronic Components'},
+        {'image':require('./productimages/electronics.avif'), 'name':'Electronic Gadgets'},
+        {'image':require('./productimages/kidswear.avif'),'name':'Home Electronics'},
+        {'image':require('./productimages/laptops.jpg'),'name':'Laptops'},
+        {'image':require('./productimages/mensClothing.jpg'),'name':'Men\'s Wear'},
+        {'image':require('./productimages/mobiles.jpg'),'name':'Mobiles'},
+        {'image':require('./productimages/womenclothing.jpeg'),'name':'Women\'s Wear'},
+        {'image':require('./productimages/homeElectronics.jpg'),'name':'Home Electronics'},
+        {'image':require('./productimages/ComputerAccesories.avif'),'name':'Computer Accesories'}
+    ]
+
     return(
         <div className="AboutContainer">
                 <div className="aboutus aboutcontainer">
@@ -54,21 +66,32 @@ function About(props){
                 </div>
 
                 <div className="productdiv">
-                    <label className="square product">
-                        <label className="storysquare productsquare"/>
-                        <label className="storysquare productsquare2"/>
-                        <label className="storysquare productsquare3"/>
-                    </label>
-                    <div className="aboutdiv">
-                        <h1>Our Products</h1>
-                        <p>
-                            Explore a diverse range of electronics, fashion, home decor, and accessories 
-                            meticulously selected to cater to your needs. From cutting-edge technology 
-                            to timeless classics, we ensure that every item meets our high standards of 
-                            excellence.
-                        </p>
+                        <label className="square product">
+                            <label className="storysquare productsquare"/>
+                            <label className="storysquare productsquare2"/>
+                            <label className="storysquare productsquare3"/>
+                        </label>
+                        <div className="aboutdiv">
+                            <h1>Our Products</h1>
+                            <p>
+                                Explore a diverse range of electronics, fashion, home decor, and accessories 
+                                meticulously selected to cater to your needs. From cutting-edge technology 
+                                to timeless classics, we ensure that every item meets our high standards of 
+                                excellence.
+                            </p>
                     </div>
                 </div>
+
+                    <div className="productcategories">
+                    {
+                            images.map((item)=>(
+                                <div className="productimg">
+                                    <img src={item.image}/>
+                                    <label>{item.name}</label>
+                                </div>
+                            ))
+                        }
+                    </div>
 
 
                 <div className="customer">
