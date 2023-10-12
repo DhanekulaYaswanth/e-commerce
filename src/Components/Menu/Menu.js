@@ -3,15 +3,18 @@ import { NavLink, Link, Outlet,useLocation } from "react-router-dom";
 import './Menu.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightToBracket, faCartShopping,  faMoon,  faSun,  faUserPlus } from "@fortawesome/free-solid-svg-icons";
+import Footer from "../Footer/Footer";
 
 function Menu(props){
 
     const {theme,
-            settheme
+            settheme,
+            cart
         } = props;
 
     const location = useLocation();
     const [activePage, setActivePage] = useState('');
+
 
     useEffect(() => {
         setActivePage(location.pathname);
@@ -22,13 +25,14 @@ function Menu(props){
         settheme(!theme);
     }
 
+
     return(
         <div className={theme?"MenuContainer dark":"MenuContainer"}>
             <input type="checkbox" id="hamburger"/>
-            <div className={theme?"Menu ":"Menu darkMenu"}>
+            <div className={theme?"Menu darkmenu":"Menu"}>
                 <div className="logo">
                     <div className="logotheme">
-                        <Link to='/' className='logolink' style={{color:theme?'#fff':''}}><h1>E-Commerce</h1></Link>
+                        <Link to='/' className='logolink' style={{color:theme?'#fff':''}}><img src={require('./2 (1).png')} className="websitelogo"/> <h1> 1 Stop</h1></Link>
                         <label className="theme" onClick={()=>{handleTheme()}}>{theme?<FontAwesomeIcon icon={faMoon} id="Moon" title="dark mode"/>:<FontAwesomeIcon icon={faSun} id="Sun" title="light mode"/>}</label>
                     </div>
                     <label className="hamburger" htmlFor="hamburger">
@@ -66,13 +70,16 @@ function Menu(props){
                     </label>
                     <label>
                         <NavLink to='/cart' className={activePage === '/cart' ? theme?'lightbtnactive':'btnactive  button' : theme?'lightbtn':'button'}>
-                            <FontAwesomeIcon icon={faCartShopping}/> Cart
+                        <FontAwesomeIcon icon={faCartShopping}/> Cart ({cart.length})
                         </NavLink>
                     </label>
                 </div>
             </div>
             <div className="Outlet">
                 <Outlet/>
+            </div>
+            <div className="footer">
+                <Footer theme={theme}/>
             </div>
         </div>
     )

@@ -7,15 +7,15 @@ function About(props){
     const [query,setquery] = useState(null)
 
     const images = [
-        {'image':require('./productimages/circuitscomponents.jpg'),'name':'Electronic Components'},
-        {'image':require('./productimages/electronics.avif'), 'name':'Electronic Gadgets'},
-        {'image':require('./productimages/kidswear.avif'),'name':'Home Electronics'},
-        {'image':require('./productimages/laptops.jpg'),'name':'Laptops'},
-        {'image':require('./productimages/mensClothing.jpg'),'name':'Men\'s Wear'},
-        {'image':require('./productimages/mobiles.jpg'),'name':'Mobiles'},
-        {'image':require('./productimages/womenclothing.jpeg'),'name':'Women\'s Wear'},
-        {'image':require('./productimages/homeElectronics.jpg'),'name':'Home Electronics'},
-        {'image':require('./productimages/ComputerAccesories.avif'),'name':'Computer Accesories'}
+        {'image':require('./productimages/circuitscomponents.jpg'),'name':'Electronic Components','id':'1'},
+        {'image':require('./productimages/electronics.avif'), 'name':'Electronic Gadgets','id':'2'},
+        {'image':require('./productimages/kidswear.avif'),'name':'Kid\'s Wear','id':'3'},
+        {'image':require('./productimages/laptops.jpg'),'name':'Laptops','id':'4'},
+        {'image':require('./productimages/mensClothing.jpg'),'name':'Men\'s Wear','id':'5'},
+        {'image':require('./productimages/mobiles.jpg'),'name':'Mobiles','id':'6'},
+        {'image':require('./productimages/womenclothing.jpeg'),'name':'Women\'s Wear','id':'7'},
+        {'image':require('./productimages/homeElectronics.jpg'),'name':'Home Electronics','id':'8'},
+        {'image':require('./productimages/ComputerAccesories.avif'),'name':'Computer Accesories','id':'9'}
     ]
 
     return(
@@ -85,7 +85,7 @@ function About(props){
                     <div className="productcategories">
                     {
                             images.map((item)=>(
-                                <div className="productimg">
+                                <div className="productimg" key={item.id}>
                                     <img src={item.image}/>
                                     <label>{item.name}</label>
                                 </div>

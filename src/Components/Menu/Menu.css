@@ -11,19 +11,22 @@
 }
 
 
+
+
 .Menu{
     display: flex;
     position: sticky;
     top: 0;
     z-index: 99999;
     backdrop-filter: blur(5px);
-    background-color: #0000004c;
+    background-color: #ffffff3d;
 }
 
 
 .darkMenu{
-    background-color: #e6e6e64d;
+    background-color: #00000080;
 }
+
 
 
 .link{
@@ -78,10 +81,15 @@
     color: black;
 }
 
+.websitelogo{
+    width: 100px;
+}
+
 .logolink{
     text-decoration: none;
     font-size: 20px;
     color: black;
+    display: flex;
 }
 
 .MenuList{
@@ -302,8 +310,14 @@
 
 .Outlet{
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     max-height: max-content;
+}
+
+
+.footer{
+    height: max-content;
+    width: 100%;
 }
 
 
