@@ -13,7 +13,7 @@ function Footer(props){
         <div className="FooterContainer">
             <div className={theme?"Footer1 darkfoot":"Footer1"}>
                 <div className="websiteinfo">
-                    <h1 className="footerheading">E-Commerce</h1>
+                    <h1 className="footerheading">1 Stop</h1> 
                     <p>
                         Explore a diverse range of electronics, fashion, 
                         home decor, and accessories meticulously selected to 
@@ -43,7 +43,7 @@ function Footer(props){
                     <h1 className="footerheading">Contact</h1>
                     <label><FontAwesomeIcon icon={faLocationDot} className="icon"/> <p>7 Green Valley Street, CrawfordValley, IN 4554</p></label>
                     <label><FontAwesomeIcon icon={faPhone} className="icon"/> <p>+1 808 111 202 331</p></label>
-                    <label><FontAwesomeIcon icon={faEnvelope} className="icon"/> <p>ecommercestore@help.com</p></label>
+                    <label><FontAwesomeIcon icon={faEnvelope} className="icon"/> <p>1stopsupport@help.com</p></label>
                 </div>
 
                 <div className="newsletter">

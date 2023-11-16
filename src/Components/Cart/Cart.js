@@ -34,7 +34,7 @@ function Cart(props){
                     cart.length!==0?
                         cart.map((items)=>(
                             <div className={theme?"productinfo darkproductinfo":"productinfo"} key={items.id}>
-                                <img src={items.Name} alt="sorry we are unable to load picture!"/>
+                                <img src={items.Images[0]} alt="sorry we are unable to load picture!"/>
                                 <h1>{String(items.Title).slice(0,20)+'...'}</h1>
                                 <p>{String(items.Description).slice(0,80)+'...'}</p>
                                 <label className="price">{'$ '+items.Price}</label>

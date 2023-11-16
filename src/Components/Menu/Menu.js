@@ -4,12 +4,16 @@ import './Menu.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightToBracket, faCartShopping,  faMoon,  faSun,  faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import Footer from "../Footer/Footer";
+import Loading from "../Loading/Loading";
+
+
 
 function Menu(props){
 
     const {theme,
             settheme,
-            cart
+            cart,
+            loading,
         } = props;
 
     const location = useLocation();
@@ -32,7 +36,7 @@ function Menu(props){
             <div className={theme?"Menu darkmenu":"Menu"}>
                 <div className="logo">
                     <div className="logotheme">
-                        <Link to='/' className='logolink' style={{color:theme?'#fff':''}}><img src={require('./2 (1).png')} className="websitelogo"/> <h1> 1 Stop</h1></Link>
+                        <Link to='/' className='logolink' style={{color:theme?'#fff':''}}><img src={require('./2 (1).png')} className="websitelogo" alt="sorry!"/> <h1> 1</h1> <h1> Stop</h1></Link>
                         <label className="theme" onClick={()=>{handleTheme()}}>{theme?<FontAwesomeIcon icon={faMoon} id="Moon" title="dark mode"/>:<FontAwesomeIcon icon={faSun} id="Sun" title="light mode"/>}</label>
                     </div>
                     <label className="hamburger" htmlFor="hamburger">
@@ -76,6 +80,7 @@ function Menu(props){
                 </div>
             </div>
             <div className="Outlet">
+                <Loading loading={loading}/>
                 <Outlet/>
             </div>
             <div className="footer">

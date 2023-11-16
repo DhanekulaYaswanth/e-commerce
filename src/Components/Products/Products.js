@@ -1,55 +1,79 @@
 import React,{useEffect, useState} from "react";
 import './Products.css'
+import axios from 'axios';
+import { Link } from "react-router-dom";
 
 
 function Products(props){
-    const {products,theme,cart,setcart} = props;
+    const {products,theme,cart,setcart,openProduct,setOpenProduct,setproducts, loading, setLoading} = props;
 
     const [active,setactive] = useState(1);
     const [temporary,setTemporary] = useState([]);
 
+
+    useEffect(()=>{
+        setLoading(true);
+        axios.get('http://localhost:3030/getproducts')
+        .then((resposne)=>{
+          setproducts(resposne.data)
+        })
+        .catch((err)=>{
+          console.log(err)
+        })
+      },[])
+
+
     useEffect(() => {
         // Shuffle the data when the component is mounted
         const shuffledData = [...products].sort(() => Math.random() - 0.5);
+        setLoading(false)
         setTemporary(shuffledData);
-      }, []);
+      }, [products]);
 
 
-    useEffect(()=>{
+      useEffect(() => {
         var result = [];
-        if(active===1){
-            result = products;
+      
+        if (active === 1) {
+          result = products;
+        } else {
+          const tagToFilter = getTagBasedOnActive(active);
+      
+          const filteredProducts = products.filter((product) =>
+            product.Tags.includes(tagToFilter)
+          );
+      
+          result = filteredProducts;
         }
-        else if(active===2){
-            const filteredProducts = products.filter(product => product.Tag === 'men');
-            result = filteredProducts;
-        }else if(active===3){
-            const filteredProducts = products.filter(product => product.Tag === 'women');
-            result = filteredProducts;
-        }else if(active===4){
-            const filteredProducts = products.filter(product => product.Tag === 'kids');
-            result = filteredProducts;
-        }else if(active===5){
-            const filteredProducts = products.filter(product => product.Tag === 'mobile');
-            result = filteredProducts;
-        }else if(active===6){
-            const filteredProducts = products.filter(product => product.Tag === 'tv');
-            result = filteredProducts;
-        }else if(active===7){
-            const filteredProducts = products.filter(product => product.Tag === 'home');
-            result = filteredProducts;
-        }else if(active===8){
-            const filteredProducts = products.filter(product => product.Tag === 'electronic');
-            result = filteredProducts;
-        }else if(active===9){
-            const filteredProducts = products.filter(product => product.Tag === 'computer');
-            result = filteredProducts;
-        }else if(active===10){
-            const filteredProducts = products.filter(product => product.Tag === 'laptop');
-            result = filteredProducts;
-        }
+      
         setTemporary(result);
-    },[active])
+      }, [active]);
+      
+      const getTagBasedOnActive = (active) => {
+        switch (active) {
+          case 2:
+            return 'men';
+          case 3:
+            return 'women';
+          case 4:
+            return 'kids';
+          case 5:
+            return 'mobile';
+          case 6:
+            return 'tv';
+          case 7:
+            return 'home';
+          case 8:
+            return 'electronic';
+          case 9:
+            return 'computer';
+          case 10:
+            return 'laptop';
+          default:
+            return 'All';
+        }
+      };
+      
 
 
     const handlecart = (e) => {
@@ -69,6 +93,7 @@ function Products(props){
         }
     }
 
+    
     
     
     
@@ -93,14 +118,14 @@ function Products(props){
                 {
                     temporary.length!==0?
                         temporary.map((items)=>(
-                            <div className={theme?"productinfo darkproductinfo":"productinfo"} key={items.id}>
-                                <img src={items.Name} alt="sorry we are unable to load picture!"/>
-                                <h1>{String(items.Title).slice(0,20)+'...'}</h1>
+                            <div className={theme?"productinfo darkproductinfo":"productinfo"} key={items.id} >
+                                <Link onClick={()=>setOpenProduct(items)} to={"/product/" + items.id}  className="imgLink" target="_blank"><img src={items.Images[0]} alt="sorry we are unable to load picture!"/></Link>
+                                <h1 className={theme?"producttitle darkproducttitle":"producttitle"}><Link className="titleLink" to={"/product/" + items.id} target="_blank">{String(items.Title).slice(0,60)+'...'}</Link></h1>
                                 <p>{String(items.Description).slice(0,80)+'...'}</p>
                                 <label className="price">{'$ '+items.Price}</label>
                                 <div className={theme?"productbtns darkbuttons":"productbtns"}>
-                                    <button>Buy Now</button>
-                                    <button onClick={()=>{handlecart(items)}}>Add to Cart</button>
+                                    <Link onClick={()=>setOpenProduct(items)} to={"/product/" + items.id}  className="Link" target="_blank">Buy Now</Link>
+                                    <Link onClick={()=>{handlecart(items)}} className="Link">Add to Cart</Link>
                                 </div>
                             </div>
                         ))

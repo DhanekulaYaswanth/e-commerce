@@ -83,6 +83,17 @@
 
 .websitelogo{
     width: 100px;
+    animation: roll 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+
+@keyframes roll {
+    0%{
+        transform: translateX(50%) rotate(0deg);
+    }
+    100%{
+        transform: translateX(0%) rotate(-360deg);
+    }
 }
 
 .logolink{
@@ -90,6 +101,26 @@
     font-size: 20px;
     color: black;
     display: flex;
+}
+
+.logolink>h1{
+    font-family:cursive;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    animation: slideright 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes slideright {
+    0%{
+        opacity: 0;
+        transform: translatex(-150%);
+    }
+    50%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
 }
 
 .MenuList{
