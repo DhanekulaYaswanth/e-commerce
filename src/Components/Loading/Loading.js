@@ -4,6 +4,7 @@ import './Loading.css';
 
 function Loading(props){
     const {loading} = props;
+    console.log(loading)
     return(
         <>
             {

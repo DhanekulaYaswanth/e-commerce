@@ -1,5 +1,5 @@
 import './App.css';
-import { HashRouter,Route,Routes } from 'react-router-dom';
+import { HashRouter,Route,Routes} from 'react-router-dom';
 import Menu from './Components/Menu/Menu';
 import Products from './Components/Products/Products.js';
 import Home from './Components/Home/Home';
@@ -10,6 +10,7 @@ import Register from './Components/Register/Register';
 import Cart from './Components/Cart/Cart.js';
 import { useEffect, useState } from 'react';
 import ProductDisplay from './Components/ProductDisplay/ProductDisplay.js';
+
 
 function App() {
 
@@ -24,13 +25,15 @@ function App() {
     localStorage.setItem('theme', JSON.stringify(theme));
   }, [theme]);
 
-  
+
+
+
 
   return (
     <div className={theme?"App darkcolor":"App"}>
       <HashRouter>
         <Routes>
-          <Route path='/' element={<Menu theme={theme} settheme={settheme} cart={cart} loading={loading}/>}>
+          <Route path='/' element={<Menu theme={theme} settheme={settheme} cart={cart} loading={loading} setLoading={setLoading}/>}>
             <Route path='/' element={<Home theme={theme}/>}/>
             <Route path='/Products' element={<Products theme={theme} 
                                                         products={products} 

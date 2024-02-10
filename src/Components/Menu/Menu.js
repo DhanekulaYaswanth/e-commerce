@@ -14,6 +14,7 @@ function Menu(props){
             settheme,
             cart,
             loading,
+            setLoading
         } = props;
 
     const location = useLocation();
@@ -22,6 +23,7 @@ function Menu(props){
 
     useEffect(() => {
         setActivePage(location.pathname);
+        
     }, [location]);
 
 

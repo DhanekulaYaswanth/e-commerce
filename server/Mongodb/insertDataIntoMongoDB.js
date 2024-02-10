@@ -4,7 +4,7 @@ dotenv.config();
 
 
 async function insertDataIntoMongoDB(dataWithUpdatedImages) {
-  const uri = 'mongodb://localhost:27017';
+  const uri = `mongodb+srv://${process.env.mongouser}:${process.env.mongopass}@${process.env.mongouri}/${process.env.mongodb}?retryWrites=true&w=majority`;
 
   // Create a new MongoClient
   const client = new MongoClient(uri);

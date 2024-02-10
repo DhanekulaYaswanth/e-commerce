@@ -2,35 +2,31 @@ const dotenv = require('dotenv');
 const { MongoClient } = require('mongodb');
 dotenv.config();
 
-
-async function GetProductData(){
-    const uri = 'mongodb://localhost:27017/ecommerce';
-
-    // Create a new MongoClient
-    const client = new MongoClient(uri);
-
-    // Connect to the MongoDB server
-    await client.connect();
-
-    console.log('Connected to MongoDB');
-
+async function GetProductData() {
+    var client;
     try {
-        const db = client.db('ecommerce');//accessing the database
+        const uri = `mongodb+srv://${process.env.mongouser}:${process.env.mongopass}@${process.env.mongouri}/${process.env.mongodb}?retryWrites=true&w=majority`;
 
-        const collection = db.collection('productdata');//
+        client = new MongoClient(uri);
 
+        await client.connect();
+        console.log('Connected to MongoDB');
+
+        const db = client.db('ecommerce');
+        const collection = db.collection('productdata');
         const data = await collection.find().toArray();
 
+        console.log('Data retrieved successfully');
         return data;
-        
     } catch (error) {
-        console.error('Error connecting to MongoDB or inserting data:', error);
+        console.error('Error:', error);
+        return null; // Returning null to signify an error occurred
     } finally {
-        await client.close(); //closing the connection
-        console.log('Connection closed');
+        if (client) {
+            await client.close();
+            console.log('Connection closed');
+        }
     }
-    return null;
 }
-
 
 module.exports = GetProductData;

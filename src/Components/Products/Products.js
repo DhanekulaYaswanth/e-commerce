@@ -5,17 +5,18 @@ import { Link } from "react-router-dom";
 
 
 function Products(props){
-    const {products,theme,cart,setcart,openProduct,setOpenProduct,setproducts, loading, setLoading} = props;
+    const {products,theme,cart,setcart,openProduct,setOpenProduct,setproducts,setLoading, loading } = props;
 
     const [active,setactive] = useState(1);
     const [temporary,setTemporary] = useState([]);
 
 
     useEffect(()=>{
-        setLoading(true);
+        setLoading(true)
         axios.get('http://localhost:3030/getproducts')
         .then((resposne)=>{
           setproducts(resposne.data)
+          setLoading(false)
         })
         .catch((err)=>{
           console.log(err)
@@ -23,10 +24,14 @@ function Products(props){
       },[])
 
 
+      useEffect(()=>{
+        console.log(loading)
+      },[loading])
+
+
     useEffect(() => {
         // Shuffle the data when the component is mounted
         const shuffledData = [...products].sort(() => Math.random() - 0.5);
-        setLoading(false)
         setTemporary(shuffledData);
       }, [products]);
 
@@ -114,25 +119,31 @@ function Products(props){
                 <button onClick={()=>{setactive(9)}}>Computer Accessories</button>
                 <button onClick={()=>{setactive(10)}}>Laptops</button>
             </div>
-            <div className="productdiv">
-                {
-                    temporary.length!==0?
-                        temporary.map((items)=>(
-                            <div className={theme?"productinfo darkproductinfo":"productinfo"} key={items.id} >
-                                <Link onClick={()=>setOpenProduct(items)} to={"/product/" + items.id}  className="imgLink" target="_blank"><img src={items.Images[0]} alt="sorry we are unable to load picture!"/></Link>
-                                <h1 className={theme?"producttitle darkproducttitle":"producttitle"}><Link className="titleLink" to={"/product/" + items.id} target="_blank">{String(items.Title).slice(0,60)+'...'}</Link></h1>
-                                <p>{String(items.Description).slice(0,80)+'...'}</p>
-                                <label className="price">{'$ '+items.Price}</label>
-                                <div className={theme?"productbtns darkbuttons":"productbtns"}>
-                                    <Link onClick={()=>setOpenProduct(items)} to={"/product/" + items.id}  className="Link" target="_blank">Buy Now</Link>
-                                    <Link onClick={()=>{handlecart(items)}} className="Link">Add to Cart</Link>
-                                </div>
-                            </div>
-                        ))
-                    :
-                    <label className="noitems">No items to Found</label>
-                }
-            </div>
+            {
+              products.length!==0?
+                <div className="productdiv">
+                  {
+                      temporary.length!==0?
+                          temporary.map((items)=>(
+                              <div className={theme?"productinfo darkproductinfo":"productinfo"} key={items.id} >
+                                  <Link onClick={()=>setOpenProduct(items)} to={"/product/" + items.id}  className="imgLink" target="_blank"><img src={items.Images[0]} alt="sorry we are unable to load picture!"/></Link>
+                                  <h1 className={theme?"producttitle darkproducttitle":"producttitle"}><Link className="titleLink" to={"/product/" + items.id} target="_blank">{String(items.Title).slice(0,60)+'...'}</Link></h1>
+                                  <p>{String(items.Description).slice(0,80)+'...'}</p>
+                                  <label className="price">{'$ '+items.Price}</label>
+                                  <div className={theme?"productbtns darkbuttons":"productbtns"}>
+                                      <Link onClick={()=>setOpenProduct(items)} to={"/product/" + items.id}  className="Link" target="_blank">Buy Now</Link>
+                                      <Link onClick={()=>{handlecart(items)}} className="Link">Add to Cart</Link>
+                                  </div>
+                              </div>
+                          ))
+                      :
+                      <label className="noitems">No items to Found</label>
+                    
+                  }
+                </div>
+              :
+                ''
+          }
         </div>
     )
 }
