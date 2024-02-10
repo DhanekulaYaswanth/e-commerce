@@ -10,9 +10,12 @@ const getproducts = require('./Mongodb/GetProductData')
 
 const app = express();
 
-app.use(cors({
-    origin:'http://localhost:3000'
-}))
+const corsOptions = {
+    origin: 'https://dhanekulayaswanth.github.io',
+};
+
+app.use(cors(corsOptions));
+
 
 
 app.use(express.json());
