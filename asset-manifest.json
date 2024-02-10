@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/e-commerce/static/css/main.e12e1f53.css",
-    "main.js": "/e-commerce/static/js/main.87eb2932.js",
+    "main.css": "/e-commerce/static/css/main.8a2d66d5.css",
+    "main.js": "/e-commerce/static/js/main.afabc005.js",
     "static/media/products.jpg": "/e-commerce/static/media/products.1ea0221596f9e5f3d7d9.jpg",
     "static/media/mobiles.jpg": "/e-commerce/static/media/mobiles.4d69a794123107bb37b3.jpg",
     "static/media/about.jpg": "/e-commerce/static/media/about.c1e265e122a26d58af4e.jpg",
@@ -21,11 +21,11 @@
     "static/media/homeElectronics.jpg": "/e-commerce/static/media/homeElectronics.ed808ebe42c289f83be0.jpg",
     "static/media/electronics.avif": "/e-commerce/static/media/electronics.ca3cd2f2edf21457bfb7.avif",
     "index.html": "/e-commerce/index.html",
-    "main.e12e1f53.css.map": "/e-commerce/static/css/main.e12e1f53.css.map",
-    "main.87eb2932.js.map": "/e-commerce/static/js/main.87eb2932.js.map"
+    "main.8a2d66d5.css.map": "/e-commerce/static/css/main.8a2d66d5.css.map",
+    "main.afabc005.js.map": "/e-commerce/static/js/main.afabc005.js.map"
   },
   "entrypoints": [
-    "static/css/main.e12e1f53.css",
-    "static/js/main.87eb2932.js"
+    "static/css/main.8a2d66d5.css",
+    "static/js/main.afabc005.js"
   ]
 }
