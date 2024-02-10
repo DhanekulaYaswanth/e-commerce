@@ -4,7 +4,9 @@
 
 
 ## **Live**
-https:dhanekulayaswanth.github.io/e-commerce/
+[](https://dhanekulayaswanth.github.io/e-commerce/)
+
+This project was bootstrapped with [Create React App](https://dhanekulayaswanth.github.com/e-commerce).
 
 
 
