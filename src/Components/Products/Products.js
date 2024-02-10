@@ -13,13 +13,14 @@ function Products(props){
 
     useEffect(()=>{
         setLoading(true)
-        axios.get('http://localhost:3030/getproducts')
+        axios.get('https://onestopserver.vercel.app/getproducts')
         .then((resposne)=>{
           setproducts(resposne.data)
           setLoading(false)
         })
         .catch((err)=>{
           console.log(err)
+          setLoading(false)
         })
       },[])
 

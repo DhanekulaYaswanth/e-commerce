@@ -13,6 +13,8 @@ const app = express();
 app.use(cors({
     origin:'http://localhost:3000'
 }))
+
+
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
@@ -29,7 +31,4 @@ app.get('/getproducts',async(req,res)=>{
 
 
 
-app.listen(3030,()=>{
-    console.log('server started')
-})
 
